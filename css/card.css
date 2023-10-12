@@ -1,0 +1,128 @@
+.movie-title-mobile-limit:hover {
+    max-width: none;
+    overflow: visible;
+    white-space: normal;
+    text-overflow: clip;
+}
+
+
+.movie-card {
+    padding: 0;
+    display: flex;
+    margin-bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+}
+
+.movie-card .movie-card-img {
+    overflow: hidden; /* Adiciona overflow hidden para conter a imagem */
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.movie-card:hover .movie-card-img img {
+    transform: scale(1.2); 
+    transition: transform 0.3s ease;
+}
+
+.movie-card:hover {
+    transform: scale(1.05); 
+    transition: transform 0.5s ease;
+}
+
+
+.movie-card-content {
+    flex: 2; /* Toma 2/3 da largura */
+    padding: 20px;
+    display: flex; 
+    flex-direction: column; 
+    align-items: flex-start;
+}
+
+
+.movie-card h3 {
+    margin: 0;
+    margin-bottom: 10px; 
+    
+}
+
+.bar {
+    width: 50px;
+    height: 4px;
+    background-color: #0076bd;
+    margin-bottom: 10px;
+    transition: width 0.3s;
+    border-radius: 5px;
+}
+
+.movie-synopsis {
+    padding: 0;
+    text-align: justify;
+    max-height: 90px; /* Defina a altura máxima desejada */
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 10px;
+    
+}
+
+.movie-details {
+    padding: 2px;
+    width: 80%;
+    display: flex; 
+    list-style: none;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    background-color: #0076bd; /* Cor de fundo */
+    font-size: small;
+    justify-content: space-between; /* Distribui os elementos à esquerda e à direita */
+}
+.movie-details li {
+    margin-left: 5px;
+    margin-right: 10px;
+}
+.movie-card:hover .bar {
+    width: 200px; 
+}
+
+
+/* CSS para dispositivos móveis (até 768px de largura) */
+@media (max-width: 768px) {
+    .movie-card {
+        flex-direction: column;
+        position: relative;
+    }
+
+    .movie-card img {
+        width: 100%;
+        max-height: 200px;
+        object-fit: cover;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 0px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 0px;
+    }
+
+    .movie-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: inherit;
+        filter: blur(10px); 
+        z-index: -1;
+    }
+
+    .movie-card-content {
+        order: 2;
+    }
+
+    
+
+    .movie-details {
+        order: 3;
+        width: 100%;
+    }
+}
