@@ -1,0 +1,22 @@
+@media (max-width: 768px) {
+    .movie-title-mobile-limit {
+        max-width: 140px; /* Largura máxima de 200px para o título */
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .banner {
+        position: relative;
+        background-image: url('../img/banner.png');
+        background-position: center;
+        text-align: center;
+        padding: 150px 0;
+        height: 200px;
+    }
+    .banner-title {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 70%; 
+    }
+}

@@ -22,80 +22,27 @@ body {
 }
 
 
-@media (max-width: 768px) {
-    .movie-title-mobile-limit {
-        max-width: 140px; /* Largura máxima de 200px para o título */
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-    }
-    .banner {
-        position: relative;
-        background-image: url('../img/banner.png');
-        background-position: center;
-        text-align: center;
-        padding: 150px 0;
-        height: 200px;
-    }
-    .banner-title {
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 70%; 
-    }
-}
 
-
-
-/* Estilos para o footer */
-footer {
-    background-color: #333; /* Cor de fundo do footer */
-    color: #fff; /* Cor do texto no footer */
-    text-align: center;
-    padding: 20px 0;
-}
-
-.footer-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.footer-links {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-links li {
-    display: inline;
-    margin: 0 10px;
-}
-
-/* Estilos para os links no footer */
-.footer-links a {
-    text-decoration: none;
-    color: #fff;
-}
-
-/* Estilos para o título no header */
 header {
-    background-color: #0076bd; /* Cor de fundo do cabeçalho */
-    color: #fff; /* Cor do texto no cabeçalho */
+    background-color: #0076bd; 
+    color: #fff;
     text-align: center;
     padding: 20px 0;
 }
 
 .banner-title {
-    background: rgba(0, 0, 0, 0.7); /* Cor de fundo preto com 50% de transparência */
-    color: white; /* Cor do texto */
-    padding: 20px; /* Espaçamento interno para melhor legibilidade */
+    background: rgba(0, 0, 0, 0.7);
+    color: white; 
+    padding: 20px; 
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    max-width: 60%; /* Tamanho máximo de 50% da tela */
-    text-align: center; /* Centraliza o texto horizontalmente */
+    max-width: 60%; 
+    text-align: center; 
     border-radius: 10px;
+    user-select: none; 
+
 }
 
 .like-section {

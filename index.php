@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="dependencias/bootstrap_css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/card.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <link rel="icon" type="img/logo.png" href="/images/favicon.ico">
+
 </head>
 
 <body>
