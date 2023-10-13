@@ -124,14 +124,10 @@
     <script src="script/formatDate.js"></script>
     <script src="script/listaAtuais&Novos.js"></script>
     <script src="script/popularMovies.js"></script>
-    <script src="script/like.js"></script>
+
     <!-- API fontawesome -->
     <script src="https://kit.fontawesome.com/4901ca35cb.js" crossorigin="anonymous"></script>
-
-    <script>
-    
-</script>
-
+    <script src="script/like.js"></script>
 
 </body>
 

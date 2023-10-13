@@ -1,11 +1,11 @@
 const heartIcon = document.getElementById('heart-icon');
-    const likeCount = document.getElementById('like-count');
+const likeCount = document.getElementById('like-count');
     let isLiked = false;
 
     // Função para verificar o status do like no servidor
     function checkLikeStatus() {
         $.ajax({
-            url: '/backend/verificar_like.php',
+            url: 'backend/verificar_like.php',
             type: 'GET',
             success: function (response) {
                 if (response === 'true') {
@@ -24,7 +24,7 @@ const heartIcon = document.getElementById('heart-icon');
     // Função para obter o contador de curtidas do servidor
     function updateLikeCount() {
         $.ajax({
-            url: '/backend/obter_contador_likes.php',
+            url: 'backend/obter_contador_likes.php',
             type: 'GET',
             success: function (response) {
                 // Atualize o contador de curtidas com o valor retornado do servidor
@@ -61,7 +61,7 @@ const heartIcon = document.getElementById('heart-icon');
     // Função para atualizar o status do like no servidor
     function updateLikeStatus(isLiked) {
         $.ajax({
-            url: '/backend/add_remove_likes.php',
+            url: 'backend/add_remove_likes.php',
             type: 'POST',
             data: { isLiked: isLiked },
             success: function () {
