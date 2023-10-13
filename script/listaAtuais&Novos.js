@@ -6,6 +6,7 @@ const upcomingURL = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKe
 // Função para exibir a lista de filmes
 function displayMovieList() {
 
+    //XMLHttpRequest
     fetch(latestMoviesURL)
         .then(response => response.json())
         .then(data => {

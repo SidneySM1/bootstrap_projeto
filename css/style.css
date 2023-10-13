@@ -29,6 +29,15 @@ body {
         white-space: nowrap;
         text-overflow: ellipsis;
     }
+    .banner {
+        position: relative;
+        background-image: url('../img/banner.png');
+        background-position: center;
+        text-align: center;
+        padding: 150px 0;
+        height: 200px;
+    }
+    
 }
 
 
@@ -71,4 +80,16 @@ header {
     padding: 20px 0;
 }
 
+.banner-title {
+    background: rgba(0, 0, 0, 0.5); /* Cor de fundo preto com 50% de transparência */
+    color: white; /* Cor do texto */
+    padding: 20px; /* Espaçamento interno para melhor legibilidade */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 50%; /* Tamanho máximo de 50% da tela */
+    text-align: center; /* Centraliza o texto horizontalmente */
+    border-radius: 10px;
+}
 

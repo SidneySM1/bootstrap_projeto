@@ -14,8 +14,10 @@
 <body>
     <div class="banner-wrapper">
         <div class="banner">
-            <div class="overlay"></div>
-            <h1>Guia dos filmes</h1>
+            <div class="banner-title">
+                <h1>O Guia de filmes</h1>
+                <p>Gostou do meu projeto? <i class="far fa-heart" id="heart-icon"></i></p>
+            </div>
         </div>
     </div>
 
@@ -36,10 +38,10 @@
                         <a class="nav-link" href="#">Filmes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Sobre</a>
+                        <a class="nav-link" href="#">Favoritos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contato</a>
+                        <a class="nav-link" href="#">Sobre</a>
                     </li>
                 </ul>
             </div>
@@ -100,6 +102,29 @@
     <script src="script/formatDate.js"></script>
     <script src="script/listaAtuais&Novos.js"></script>
     <script src="script/popularMovies.js"></script>
+
+
+    <script src="https://kit.fontawesome.com/4901ca35cb.js" crossorigin="anonymous"></script>
+<script>
+    const heartIcon = document.getElementById('heart-icon');
+    let isLiked = false;
+
+    heartIcon.addEventListener('click', function () {
+        if (isLiked) {
+            heartIcon.classList.remove('fas', 'text-danger');
+            heartIcon.classList.add('far');
+            isLiked = false;
+        } else {
+            heartIcon.classList.remove('far');
+            heartIcon.classList.add('fas', 'text-danger');
+            isLiked = true;
+        }
+    });
+</script>
+
+
+
+
 </body>
 
 </html>
