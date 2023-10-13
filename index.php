@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="dependencias/bootstrap_css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/card.css">
-
 </head>
 
 <body>
@@ -105,24 +104,59 @@
 
 
     <script src="https://kit.fontawesome.com/4901ca35cb.js" crossorigin="anonymous"></script>
-<script>
+
+
+    <script>
     const heartIcon = document.getElementById('heart-icon');
     let isLiked = false;
 
+    // Função para verificar o status do like no servidor
+    function checkLikeStatus() {
+        $.ajax({
+            url: 'backend/verificar_like.php',
+            type: 'GET',
+            success: function (response) {
+                if (response === 'true') {
+                    isLiked = true;
+                    heartIcon.classList.remove('far', 'text-danger');
+                    heartIcon.classList.add('fas', 'text-danger');
+                } else {
+                    isLiked = false;
+                    heartIcon.classList.remove('fas', 'text-danger');
+                    heartIcon.classList.add('far', 'text-danger');
+                }
+            }
+        });
+    }
+
+    // Verifique o status do like ao carregar a página
+    checkLikeStatus();
+
+    // Adicione o manipulador de eventos para alternar o like
     heartIcon.addEventListener('click', function () {
+        isLiked = !isLiked;
         if (isLiked) {
-            heartIcon.classList.remove('fas', 'text-danger');
-            heartIcon.classList.add('far');
-            isLiked = false;
-        } else {
-            heartIcon.classList.remove('far');
+            heartIcon.classList.remove('far', 'text-danger');
             heartIcon.classList.add('fas', 'text-danger');
-            isLiked = true;
+        } else {
+            heartIcon.classList.remove('fas', 'text-danger');
+            heartIcon.classList.add('far', 'text-danger');
         }
+        updateLikeStatus(isLiked);
     });
+
+    // Função para atualizar o status do like no servidor
+    function updateLikeStatus(isLiked) {
+        $.ajax({
+            url: 'backend/add_remove_likes.php',
+            type: 'POST',
+            data: { isLiked: isLiked },
+            success: function (response) {
+                // Trate a resposta do servidor, se necessário
+            }
+        });
+    }
 </script>
-
-
 
 
 </body>
