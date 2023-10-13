@@ -37,7 +37,12 @@ body {
         padding: 150px 0;
         height: 200px;
     }
-    
+    .banner-title {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 70%; 
+    }
 }
 
 
@@ -81,15 +86,95 @@ header {
 }
 
 .banner-title {
-    background: rgba(0, 0, 0, 0.5); /* Cor de fundo preto com 50% de transparência */
+    background: rgba(0, 0, 0, 0.7); /* Cor de fundo preto com 50% de transparência */
     color: white; /* Cor do texto */
     padding: 20px; /* Espaçamento interno para melhor legibilidade */
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    max-width: 50%; /* Tamanho máximo de 50% da tela */
+    max-width: 60%; /* Tamanho máximo de 50% da tela */
     text-align: center; /* Centraliza o texto horizontalmente */
     border-radius: 10px;
 }
 
+.like-section {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#heart-icon {
+    font-size: 30px; /* Tamanho do ícone do coração */
+    cursor: pointer; /* Adiciona um cursor ao ícone para indicar que é clicável */
+}
+
+.like-counter {
+    font-size: 30px; /* Tamanho da fonte do contador de likes */
+    margin-left: 10px; /* Espaço à esquerda do contador */
+}
+
+
+/* Adicione esta classe para animar a transição */
+.follow-star-section {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease, max-height 0.3s ease;
+    max-height: 0;
+    overflow: hidden;
+}
+
+/* Quando a seção estiver visível */
+.follow-star-section.active {
+    display: block;
+    opacity: 1;
+    max-height: 200px; /* Defina a altura máxima desejada */
+    transition: opacity 0.3s ease, max-height 0.3s ease;
+}
+.follow-star-section {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease;
+  }
+  
+  .follow-button,
+  .star-button {
+    display: inline-block;
+    padding: 5px 10px;
+    border: 2px solid #df255d;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #df255d;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .follow-button:hover,
+  .star-button:hover {
+    background-color: #df255d;
+    color: #fff;
+  }
+  
+  .follow-button a,
+  .star-button a {
+    color: #df255d;
+    text-decoration: none;
+  }
+  
+  .star-button i {
+    margin-right: 5px;
+  }
+
+  .star-button:hover i {
+    color: yellow; /* Cor da estrela ao passar o mouse */
+  }
+  .follow-button:hover i {
+    color: white; /* Cor da estrela ao passar o mouse */
+  }
+  
+  .active .follow-star-section {
+    display: flex;
+    opacity: 1;
+  }

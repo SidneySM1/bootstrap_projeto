@@ -28,7 +28,7 @@ const popularMoviesURL = `https://api.themoviedb.org/3/movie/popular?api_key=${a
                                                 <ul class="movie-details custom-details">
                                                     <li>Titulo original: ${movie.original_title}</li>
                                                     <li>|</li>
-                                                    <li>Nota: ${movie.vote_average}</li>
+                                                    <li>Nota: <i class="fa-solid fa-star" style="color: yellow;"></i>${movie.vote_average}/10</li>
                                                     <li>|</li>
                                                     <li>Plataforma: ${extractPlatforms(watchData)}</li>
                                                 </ul>

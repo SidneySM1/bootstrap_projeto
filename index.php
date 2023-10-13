@@ -4,21 +4,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guida de filmes</title>
+    <title>O Guia de filmes</title>
     <link rel="stylesheet" href="dependencias/bootstrap_css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/card.css">
 </head>
 
 <body>
-    <div class="banner-wrapper">
-        <div class="banner">
-            <div class="banner-title">
-                <h1>O Guia de filmes</h1>
-                <p>Gostou do meu projeto? <i class="far fa-heart" id="heart-icon"></i></p>
+<div class="banner-wrapper">
+    <div class="banner">
+        <div class="banner-title">
+            <h1>O Guia de filmes</h1>
+            <p class="mb-0">Gostou do meu projeto? &#128073; &#128072;</p>
+            <i class="far fa-heart" id="heart-icon"></i>
+            <span class="like-counter" id="like-count">0</span>
+
+            <div class="follow-star-section">
+                <p class="mb-0">Ja que gostou tanto...</p>
+                <div class="follow-button">
+                    <a href="https://github.com/SidneySM1" target="_blank">
+                    <i class="fa-brands fa-github"></i>Seguir GitHub
+                    </a>
+                </div>
+                <div class="star-button">
+                    <a href="https://github.com/SidneySM1/bootstrap_projeto" target="_blank">
+                    <i class="fa-solid fa-star"></i> Dar estrela
+                    </a>
+                </div>
             </div>
         </div>
     </div>
+</div>
+
+
+
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container">
@@ -48,7 +67,7 @@
     </nav>
 
 
-    <div class="container" id="movie-list">
+    <div class="container mt-2" id="movie-list">
         <div class="row">
             <div class="col-md-6" id="column-left">
                 <h4>Em cartaz atualmente</h4>
@@ -69,7 +88,7 @@
 
     <hr>
     <div class="container" id="latest-movies">
-        <h2>Populares</h2>
+        <h2>Populares por <img src="img/tmdb.svg" alt="Logo"style="max-height: 50px;"></h2>
         <div class="container py-4">
         <div class="row"></div>
         </div>
@@ -102,12 +121,12 @@
     <script src="script/listaAtuais&Novos.js"></script>
     <script src="script/popularMovies.js"></script>
 
-
+    <!-- API fontawesome -->
     <script src="https://kit.fontawesome.com/4901ca35cb.js" crossorigin="anonymous"></script>
-
 
     <script>
     const heartIcon = document.getElementById('heart-icon');
+    const likeCount = document.getElementById('like-count');
     let isLiked = false;
 
     // Função para verificar o status do like no servidor
@@ -129,8 +148,21 @@
         });
     }
 
-    // Verifique o status do like ao carregar a página
+    // Função para obter o contador de curtidas do servidor
+    function updateLikeCount() {
+        $.ajax({
+            url: 'backend/obter_contador_likes.php',
+            type: 'GET',
+            success: function (response) {
+                // Atualize o contador de curtidas com o valor retornado do servidor
+                likeCount.innerText = response;
+            }
+        });
+    }
+
+    // Verifique o status do like e a contagem de curtidas ao carregar a página
     checkLikeStatus();
+    updateLikeCount();
 
     // Adicione o manipulador de eventos para alternar o like
     heartIcon.addEventListener('click', function () {
@@ -138,9 +170,17 @@
         if (isLiked) {
             heartIcon.classList.remove('far', 'text-danger');
             heartIcon.classList.add('fas', 'text-danger');
+
+            // Mostrar a seção de seguir e dar estrela com uma transição suave
+        const followStarSection = document.querySelector('.follow-star-section');
+        followStarSection.classList.add('active');
         } else {
             heartIcon.classList.remove('fas', 'text-danger');
             heartIcon.classList.add('far', 'text-danger');
+
+            // Ocultar a seção de seguir e dar estrela com uma transição suave
+        const followStarSection = document.querySelector('.follow-star-section');
+        followStarSection.classList.remove('active');
         }
         updateLikeStatus(isLiked);
     });
@@ -151,8 +191,9 @@
             url: 'backend/add_remove_likes.php',
             type: 'POST',
             data: { isLiked: isLiked },
-            success: function (response) {
-                // Trate a resposta do servidor, se necessário
+            success: function () {
+                // Após adicionar ou remover o like, atualize o contador de curtidas
+                updateLikeCount();
             }
         });
     }
