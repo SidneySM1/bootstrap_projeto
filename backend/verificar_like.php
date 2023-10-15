@@ -1,7 +1,6 @@
 <?php
 require_once('../backend/conn.php');
 
-// Obtenha o endereço IP do usuário
 $ip = $_SERVER['REMOTE_ADDR'];
 
 // Verifique se o IP já deu like

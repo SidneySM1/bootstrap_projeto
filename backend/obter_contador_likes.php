@@ -13,7 +13,6 @@ if ($result->num_rows > 0) {
     $contadorLikes = 0; // Se não houver registros na tabela
 }
 
-// Feche a conexão com o banco de dados
 $conn->close();
 
 // Retorne o contador de curtidas como resposta
