@@ -1,0 +1,93 @@
+{
+    "cardHolder": [
+        {
+            "complement": "NA",
+            "costCenter": "NA",
+            "jobOrderCode": "NA",
+            "jobCBO": "212315",
+            "jobPosition": "00617 - ASS DE TI - ADM",
+            "jobSalary": 2402.45,
+            "register": "005571",
+            "vatNumber": "12345678900",
+            "paycheck": {
+                "discounts": [
+                    {
+                        "amount": "196.69",
+                        "code": "235",
+                        "description": "INSS DO MES",
+                        "value": "0"
+                    },
+                    {
+                        "amount": "22.63",
+                        "code": "236",
+                        "description": "IRRF DO MES",
+                        "value": "7.5"
+                    }
+                ],
+                "payments": [
+                    {
+                        "amount": "2402.45",
+                        "code": "101",
+                        "description": "SALARIO",
+                        "value": "30"
+                    }
+                ],
+                "totalDiscount": 219.32,
+                "totalGross": 2402.45,
+                "totalNet": "2183.13",
+                "referenceDate": "2023-04-30",
+                "subject": "RECIBO DE PAGAMENTO",
+                "verifyHashUrl": "https://paycheck.onnibank.com.br/paycheck/contracheque",
+                "erpCode": "030101005571",
+                "info": "RECIBO DE PAGAMENTO"
+            }
+        },
+        {
+            "complement": "complement",
+            "costCenter": "costCenter",
+            "jobOrderCode": "jobOrderCode",
+            "jobCBO": "212315",
+            "jobPosition": "00617 - ASS DE TI - ADM",
+            "jobSalary": 2402.45,
+            "register": "005571",
+            "vatNumber": "09227936629",
+            "paycheck": {
+                "discounts": [
+                    {
+                        "amount": "196.69",
+                        "code": "235",
+                        "description": "INSS DO MES",
+                        "value": "0"
+                    },
+                    {
+                        "amount": "22.63",
+                        "code": "236",
+                        "description": "IRRF DO MES",
+                        "value": "7.5"
+                    }
+                ],
+                "payments": [
+                    {
+                        "amount": "2402.45",
+                        "code": "101",
+                        "description": "SALARIO",
+                        "value": "30"
+                    }
+                ],
+                "totalDiscount": 219.32,
+                "totalGross": 2402.45,
+                "totalNet": "2183.13",
+                "referenceDate": "2023-04-30",
+                "subject": "RECIBO DE PAGAMENTO",
+                "verifyHashUrl": "https://paycheck.onnibank.com.br/paycheck/contracheque",
+                "erpCode": "030101005571",
+                "info": "RECIBO DE PAGAMENTO"
+            }
+        }
+    ],
+    "merchant": {
+        "name": "ONNIBANK",
+        "uuid": "8127a859-26cd-4505-a9c7-6c99a6bc56e2",
+        "vatNumber": "38320462000169"
+    }
+}
